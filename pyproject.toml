@@ -5,30 +5,30 @@ description = "Python environment to execute code from 'AI Agents' by Michael BÃ
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "dotenv>=0.9.9",
-    "fastapi>=0.139.0",
-    "fastmcp>=2.13.0",
-    "jupyter>=1.1.1",
-    "langgraph>=1.2.7",
-    "matplotlib>=3.10.7",
-    "nltk>=3.9.2",
-    "numpy>=2.3.5",
-    "openai>=2.9.0",
-    "pandas>=3.0.3",
-    "pip>=25.3",
-    "pydantic>=2.12.5",
-    "requests>=2.32.5",
-    "scikit-learn>=1.8.0",
-    "spacy>=3.8.11",
-    "sqlalchemy>=2.0.51",
-    "textblob>=0.19.0",
-    "torch>=2.12.1",
-    "transformers>=4.57.3",
+    "dotenv==0.9.9",
+    "fastapi==0.139.0",
+    "fastmcp==3.4.2",
+    "jupyter==1.1.1",
+    "langgraph==1.2.7",
+    "matplotlib==3.10.7",
+    "nltk==3.9.2",
+    "numpy==2.3.5",
+    "openai==2.9.0",
+    "pandas==3.0.3",
+    "pip==25.3",
+    "pydantic==2.12.5",
+    "requests==2.32.5",
+    "scikit-learn==1.8.0",
+    "spacy==3.8.11",
+    "sqlalchemy==2.0.51",
+    "textblob==0.19.0",
+    "torch==2.12.1",
+    "transformers==4.57.3",
 ]
 
 [dependency-groups]
 dev = [
-    "pytest>=8.0",
+    "pytest==9.1.1",
 ]
 # CI's `test` job runs only tools/ tests (pytest + the extractor's own
 # yaml/nbformat imports), not the book's own render or execution -- it has
@@ -36,7 +36,7 @@ dev = [
 # `dev` stays untouched for local use, where the full book environment is
 # wanted anyway; `uv sync --only-group test` gets CI just these three.
 test = [
-    "pytest>=8.0",
-    "pyyaml>=6.0",
-    "nbformat>=5.10",
+    "pytest==9.1.1",
+    "pyyaml==6.0.3",
+    "nbformat==5.10.4",
 ]
