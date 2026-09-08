@@ -1,0 +1,11 @@
+.env
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+
+# Fetched by scripts/fetch_assets.py, not shipped in the repo: it is 347 MB
+# and chapter 1's notebook works from a local copy the reader obtains
+# themselves. A .partial suffix is the fetch script's own in-progress /
+# failed-download marker, never a finished file.
+assets/glove.6B.100d.txt
+assets/glove.6B.100d.txt.partial

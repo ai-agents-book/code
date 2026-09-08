@@ -1,0 +1,11 @@
+notebooks/appc-deeplearning.ipynb
+notebooks/ch01-llms.ipynb
+notebooks/ch02-tools.ipynb
+notebooks/ch03-memory.ipynb
+notebooks/ch04-flow.ipynb
+notebooks/ch05-integration.ipynb
+notebooks/ch10-orchestration.ipynb
+notebooks/ch11-governance.ipynb
+notebooks/ch13-security.ipynb
+reference/api-clients.md
+reference/python-primer.md
