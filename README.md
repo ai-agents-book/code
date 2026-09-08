@@ -68,19 +68,47 @@ is higher and depends on how the model behaves. Chapters 4, 1 and 13 are
 the heaviest; chapters 5 and 13 have a single call site each but chapter
 13 runs it against five probes. Nothing here uses a free tier by default.
 
+## Running in Colab
+
+Each chapter below opens in Colab with one click. Colab starts with no
+credentials and no `.env`, so put this in a cell at the top of the notebook
+before running anything else:
+
+```python
+!pip install -q openai==2.9.0 dotenv==0.9.9 fastmcp==3.4.2 \
+               langgraph==1.2.7 fastapi==0.139.0 nltk==3.9.2
+
+import os
+os.environ["OPENAI_API_KEY"] = "..."   # or read it from Colab's secrets
+os.environ["CHAT_MODEL"] = "..."
+os.environ["EMBED_MODEL"] = "..."
+```
+
+`load_dotenv()` finds nothing in Colab and passes silently; the variables
+above are what the notebooks actually read.
+
+Colab already ships numpy, pandas, matplotlib, torch, transformers and
+scikit-learn, so the install above covers only what it lacks — but at
+Colab's versions rather than the pinned ones, which is a second reason your
+output may differ from the printed one.
+
+Chapter 1 additionally needs the GloVe file described above; run
+`!python scripts/fetch_assets.py` after cloning the repository into the
+session.
+
 ## Chapters
 
-| Chapter | Notebook |
-|---|---|
-| 1 — Large Language Models | `notebooks/ch01-llms.ipynb` |
-| 2 — Tools | `notebooks/ch02-tools.ipynb` |
-| 3 — Memory | `notebooks/ch03-memory.ipynb` |
-| 4 — Flow | `notebooks/ch04-flow.ipynb` |
-| 5 — Integration | `notebooks/ch05-integration.ipynb` |
-| 10 — Orchestration | `notebooks/ch10-orchestration.ipynb` |
-| 11 — Governance | `notebooks/ch11-governance.ipynb` |
-| 13 — Security | `notebooks/ch13-security.ipynb` |
-| Appendix C — Deep Learning | `notebooks/appc-deeplearning.ipynb` |
+| Chapter | Notebook | |
+|---|---|---|
+| 1 — Large Language Models | `notebooks/ch01-llms.ipynb` | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ai-agents-book/code/blob/main/notebooks/ch01-llms.ipynb) |
+| 2 — Tools | `notebooks/ch02-tools.ipynb` | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ai-agents-book/code/blob/main/notebooks/ch02-tools.ipynb) |
+| 3 — Memory | `notebooks/ch03-memory.ipynb` | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ai-agents-book/code/blob/main/notebooks/ch03-memory.ipynb) |
+| 4 — Flow | `notebooks/ch04-flow.ipynb` | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ai-agents-book/code/blob/main/notebooks/ch04-flow.ipynb) |
+| 5 — Integration | `notebooks/ch05-integration.ipynb` | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ai-agents-book/code/blob/main/notebooks/ch05-integration.ipynb) |
+| 10 — Orchestration | `notebooks/ch10-orchestration.ipynb` | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ai-agents-book/code/blob/main/notebooks/ch10-orchestration.ipynb) |
+| 11 — Governance | `notebooks/ch11-governance.ipynb` | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ai-agents-book/code/blob/main/notebooks/ch11-governance.ipynb) |
+| 13 — Security | `notebooks/ch13-security.ipynb` | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ai-agents-book/code/blob/main/notebooks/ch13-security.ipynb) |
+| Appendix C — Deep Learning | `notebooks/appc-deeplearning.ipynb` | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ai-agents-book/code/blob/main/notebooks/appc-deeplearning.ipynb) |
 
 Chapters 6 to 9 and 12 contain no executable code. Appendix B's Python
 snippets are in `reference/python-primer.md`. Appendix A's two
